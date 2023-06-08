@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .header__mobile{
+        @apply lg:hidden
+    }
+    .header__actions{
+        @apply lg:block
+    }
+    .header__image img{
+        @apply flex mx-auto my-[2rem] lg:hidden 
+    }
+    .header__all{
+        @apply flex justify-between bg-greeen
+    }
+    .header__all h3{
+        @apply text-light flex items-center text-[1.5rem] ml-[1rem]
+    }
+    .toggle__menu {
+        @apply  px-[.8rem] py-[1rem] mr-[1rem] lg:hidden;
+      }
+      .toggle__menu span {
+        @apply w-[1.5rem] h-[.18rem] transition-[.5s] bg-light block;
+      }
+      .toggle__menu span:nth-child(2) {
+        @apply my-[.3rem];
+      }
+      .toggle__menu.open span:first-child {
+        @apply translate-x-0 translate-y-[9px] rotate-[225deg] transition-[.5s] ease-in-out;
+      }
+      .toggle__menu.open span:nth-child(2) {
+        @apply opacity-0 transition-[.5s] ease-in-out;
+      }
+      .toggle__menu.open span:last-child {
+        @apply translate-x-0 translate-y-[-5px] rotate-[-225deg] ease-in-out;
+      }
+      
+.header__actions{
+    @apply hidden
+}
+      .header__actions.open{
+        @apply block top-0  transition-all;
+    }
+.header__item{
+    @apply text-dark mb-[1.5rem] lg:ml-[2rem]
+}
+
+.header__item h4{
+    @apply border-b py-[1rem] px-[2rem] flex justify-between text-dark text-[1rem] cursor-pointer lg:mb-[1rem]
+}
+
+.header__item i{
+    @apply mr-[3rem] text-dark transition ease-linear duration-300 lg:hidden;
+}
+/* .plus{
+    @apply flex ml-[25rem] 
+} */
+.plus span:first-child{
+    @apply w-[1rem] h-[.18rem] transition-[.5s] bg-dark block justify-end translate-y-[3px];
+}
+.plus span:last-child{
+    @apply w-[1rem] h-[.18rem] transition-[.5s] bg-dark block justify-end rotate-[270deg];
+}
+/* .header__item i.open{
+    @apply transition ease-linear duration-300 rotate-[180deg];
+} */
+
+.header__item ul{
+    @apply max-h-0 overflow-hidden transition ease-linear duration-300 lg:max-h-[100%]
+}
+
+.header__item ul.open{
+    @apply max-h-[50rem] py-[1rem] transition ease-linear duration-300 bg-light shadow-[0_8px_15px_rgba(0,0,0,.2)]
+}
+
+.header__item ul li{
+    @apply border-b px-[3rem] mb-[1rem]
+}
+
+/* ----------HEADER PC------------------- */
+.header__pc{
+    @apply hidden lg:block lg:bg-greeen
+}
+
+.pc__wrapper{
+    @apply lg:max-w-[70rem] w-full mx-auto flex justify-between text-[.8rem] py-[1rem]
+}
+.pc__text{
+    @apply flex
+}
+.pc__in {
+    @apply flex gap-2 text-light
+}
+.pc__in h4{
+    @apply flex gap-2 items-baseline
+}
+.pc__socials{
+    @apply text-light
+}
+.pc__socials{
+    @apply flex gap-2
+}
+.pc__socials i{
+    @apply hover:text-dark
+}
+.pc__text a{
+    @apply flex text-light ml-[2rem] items-baseline
+}
+.pc__text span{
+    @apply flex ml-2
+}
+.pc__text p{
+    @apply flex text-light
+}
+
+/* -------------BANNER-------------- */
+.banner{
+    @apply bg-center bg-bannerBG1 min-h-[100vh] bg-cover bg-no-repeat lg:min-h-[45rem] flex items-center
+}
+.banner__wrapper img{
+    @apply lg:flex
+}
+}
+
