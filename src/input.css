@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.container{
+    @apply mx-auto p-[1.5rem] w-full max-w-[140rem];
+}
+
+
 
 @layer components {
     .header__mobile{
@@ -123,5 +128,70 @@
 .banner__wrapper img{
     @apply lg:flex
 }
+
+/* ---------------SLIDER-1--------------- */
+.slider-1{
+    @apply lg:max-w-[70rem] lg:w-full lg:mx-auto lg:z-[999];
+}
+.slider-1__wrapper{
+    @apply  lg:w-full lg:mx-auto  
+}
+.slider-1__item{
+    @apply w-[5rem] mx-auto bg-transparent lg:translate-y-[-10rem] lg:relative;
+}
+.slider-1__item__img{
+    @apply  lg:hover:shadow-none lg:mx-auto bg-light mx-[2rem] justify-center items-center text-center border-[2px] border-greeen border-opacity-30 rounded-[1rem]  hover:shadow-[0px_0px_5px_0px_rgba(0,0,0,.9)]
+}
+.slider-1__item img{
+    @apply flex mx-auto my-[2rem]
+}
+.slider-1__text h3{
+@apply text-[1.5rem] text-dark hover:text-greeen
+}
+.slider-1__text p{
+    @apply text-greeen my-[1rem]
+}
+.slider-1.tns-nav{
+    @apply flex items-center justify-center;
+}
+.slider-1 .tns-outer{
+    @apply lg:max-w-[60%] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit;
+}
+.slider-1 .tns-controls{
+    @apply text-[2rem]  lg:text-primary lg:flex lg:justify-between lg:z-[999] lg:w-[60%] lg:absolute;
+}
+
+/* .tns-outer{
+    @apply min-h-[20rem] z-[999]
+} */
+
+/* .tns-inner{
+    @apply z-[999] min-h-[25rem]
+} */
+/* ---------EDUTIT--------- */
+.edutit__wrapper img{
+    @apply flex w-[28rem] mx-auto
+}
+.edutit__text{
+    @apply my-[2rem]
+}
+.edutit__text h2{
+    @apply  font-bold flex text-dark text-[1.6rem] text-justify ml-[1rem]
+}
+.edutit__text h2 span{
+    @apply text-greeen text-[1.5rem]
+}
+.success__bar{
+    @apply my-[10px]; 
+    }
+    .success__bar__circle{
+    @apply h-[3px] w-[90px] bg-primary my-0 mx-auto relative rounded-[30px]
+    }
+    .success__bar__circle::before{
+    @apply content-[""] absolute left-0 top-[50%] transform translate-y-[-50%] border-primary border-[6px] rounded-[50%] bg-[#1c1b1b] animate-sliding1
+    }
+    .success__bar__circle::after{
+    @apply content-[""] absolute right-0 top-[50%] transform translate-y-[-50%] border-primary border-[6px] rounded-[50%] bg-[#1c1b1b] animate-sliding2
+    }
 }
 

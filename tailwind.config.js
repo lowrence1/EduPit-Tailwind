@@ -25,6 +25,28 @@ module.exports = {
       'dream-bg':'url("./img/thumnails-info-1-370x303.jpg")',
       'email-bg': 'url("./img/parallax-2-1920x850.jpg")',
     },
+    keyframes: {
+      sliding1:{
+        from: {
+          left:'0',
+        },
+        to: {
+          left:'100%',
+        },
+      },
+      sliding2:{
+        from: {
+          right:'0',
+        },
+        to: {
+          right:'100%',
+        },
+      }
+    },
+    animation:{
+      sliding1: 'sliding1 3s linear infinite',
+      sliding2: 'sliding2 3s linear infinite',
+    },
   plugins: [],
 }
 
