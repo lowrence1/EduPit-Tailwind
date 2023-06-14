@@ -469,7 +469,7 @@
             <div class="instructor__wrapper">
                 <div class="instructor__card">
                     <div class="instructor__content">
-                        <img src="./edupit-img/instructor-img1.jpg" alt="">
+                        <img src="./img/team-01.jpg" alt="">
                         <h3>Chris Anderson</h3>
                         <p>Partner</p>
                     </div>
@@ -483,7 +483,7 @@
                 </div>
                 <div class="instructor__card">
                     <div class="instructor__content">
-                        <img src="./edupit-img/instructor-img2.jpg" alt="">
+                        <img src="./img/team-02.jpg" alt="">
                         <h3>Ethan J. Cooper</h3>
                         <p>Managing Partner</p>
                     </div>
@@ -497,8 +497,8 @@
                 </div>
                 <div class="instructor__card">
                     <div class="instructor__content">
-                        <img src="./edupit-img/instructor-img1.jpg" alt="">
-                        <h3>Russel Smith</h3>
+                        <img src="./img/team-01.jpg" alt="">
+                        <h3>Russel Smth</h3>
                         <p>Product Officer</p>
                     </div>
                     <div class="instructor__social">
@@ -511,7 +511,7 @@
                 </div>
                 <div class="instructor__card">
                     <div class="instructor__content">
-                        <img src="./edupit-img/instructor-img2.jpg" alt="">
+                        <img src="./img/team-02.jpg" alt="">
                         <h3>Ethan J. Cooper</h3>
                         <p>Managing Partner</p>
                     </div>
@@ -522,6 +522,116 @@
                             <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-title">
+                <h3>OUR SCHOOL FACILITY</h3>
+                <p>All the benefits you get in our education program !</p>
+            </div>
+            <div class="benefits__wrapper">
+
+                <!-- ITEM 1 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr1.jpg" alt="">
+                        </div>
+                        <a href="">Computer Science</a>
+                        <p>01 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr2.jpg" alt="">
+                        </div>
+                        <a href="">Development</a>
+                        <p>42 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr3.jpg" alt="">
+                        </div>
+                        <a href="">Chemistry</a>
+                        <p>15 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr4.jpg" alt="">
+                        </div>
+                        <a href="">Architecture</a>
+                        <p>05 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 5 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr5.jpg" alt="">
+                        </div>
+                        <a href="">Physics</a>
+                        <p>07 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 6 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr6.jpg" alt="">
+                        </div>
+                        <a href="">Islamic History</a>
+                        <p>15 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 7 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr7.jpg" alt="">
+                        </div>
+                        <a href="">Political Science</a>
+                        <p>12 Courses</p>
+                    </div>
+                </div>
+
+                <!-- ITEM 8 -->
+                <div class="benefits-item">
+                    <div class="benefits-content">
+                        <div class="benefits-img">
+                            <img src="./img/pr8.jpg" alt="">
+                        </div>
+                        <a href="">Philosophy</a>
+                        <p>01 Courses</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="our">
+        <div class="section__wrapper">
+            <div class="section_-list">
+                <div class="section__text">
+                    <h2>Our Newsletter</h2>
+                    <p>Stay in the know on the new free e-book</p>
                 </div>
             </div>
         </div>
@@ -669,6 +779,32 @@
                     items: 5,
                     nav: false,
                     controls: false,
+                    controlsText: ['<i class="fa-solid fa-caret-left"></i>', '<i class="fa-solid fa-caret-right"></i>'],
+                    slideBy: 1,
+                    autoplay: true,
+                }
+            }
+
+        });
+        var slider = tns({
+            container: '.instructor__wrapper',
+            items: 1,
+            slideBy: 'page',
+            autoplay: true,
+            axis: 'horizontal',
+            controls: false,
+            nav: true,
+            navPosition: 'bottom',
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 20,
+            speed: 1000,
+            loop: true,
+            responsive: {
+                1024: {
+                    items: 3,
+                    nav: false,
+                    controls: true,
                     controlsText: ['<i class="fa-solid fa-caret-left"></i>', '<i class="fa-solid fa-caret-right"></i>'],
                     slideBy: 1,
                     autoplay: true,

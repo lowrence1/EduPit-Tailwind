@@ -421,6 +421,69 @@ body{
 
 
 
+    /* BENEFITS SECTION */
+    .benefits{
+        @apply py-[2rem];
+    }
+
+    .benefits__wrapper{
+        @apply flex flex-col justify-center gap-[1.5rem] mt-[3rem];
+    }
+
+    .benefits-title{
+        @apply text-center;
+    }
+
+    .benefits-title h3{
+        @apply text-primary text-[1.5rem] font-bold;
+    }
+
+    .benefits-title p{
+        @apply font-bold text-dark text-[1.6rem]
+    }
+
+    .benefits-item{
+        @apply flex justify-center items-center gap-[1.5rem] border-solid border-[2px] rounded-[5px] border-primary py-[3rem] border-opacity-30;
+    }
+
+    .benefits-img{
+        @apply flex justify-center;
+    }
+
+    .benefits-content a{
+        @apply text-dark text-[1.4rem] text-center font-bold my-[1.5rem];
+    }
+
+    .benefits-content a:hover{
+        @apply text-primary;
+    }
+
+    .benefits-content p{
+        @apply text-center text-gray-500 text-[1.2rem] font-medium;
+    }
+
+    @media (min-width:1080px){
+        .benefits__wrapper{
+            @apply grid grid-cols-4;
+        }
+
+        .benefits-item{
+            @apply py-[4rem] transition-[.5s] ease-in;
+        }
+
+        .benefits-item:hover{
+            @apply border-opacity-0 shadow-xl transition-[.5s] ease-in;
+        }
+
+        .benefits-title h3{
+            @apply text-primary text-[1.2rem] font-bold;
+        }
+    
+        .benefits-title p{
+            @apply font-bold text-dark text-[2.7rem] w-[50rem] mx-auto;
+        }
+    }
+
     /*-----------------------FOOTER-UP----------------------*/
 .footer__up { 
     @apply bg-bluee 
