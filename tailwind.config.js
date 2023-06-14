@@ -8,6 +8,7 @@ module.exports = {
         light:'#ffffff',
         primary:'#04ddb2',
         greeen:'#0EB582',
+        bluee:'#18406B',
       }
     },
     screens: {

@@ -169,6 +169,9 @@
     @apply z-[999] min-h-[25rem]
 } */
 /* ---------EDUTIT--------- */
+.edutit__wrapper{
+    @apply my-[2rem]
+}
 .edutit__wrapper img{
     @apply flex w-[28rem] mx-auto
 }
@@ -176,16 +179,28 @@
     @apply my-[2rem]
 }
 .edutit__text h2{
-    @apply  font-bold flex text-dark text-[1.6rem] text-justify ml-[1rem]
+    @apply  font-bold flex text-dark text-[2.2rem] text-justify ml-[1rem]
 }
 .edutit__text h2 span{
-    @apply text-greeen text-[1.5rem]
+    @apply text-greeen text-[2.1rem]
+}
+.edutit__list{
+    @apply  ml-[1rem] border-l-[5px] border-greeen
+}
+.edutit__list p{ 
+    @apply my-[2rem] text-gray-500 text-[2rem] ml-[1rem]
+}
+.edutit__item{
+    @apply text-[1.6rem] mx-[1rem]
+}
+.edupit__success{
+    @apply text-[2rem] mt-[2rem]
 }
 .success__bar{
-    @apply my-[10px]; 
+    @apply  my-[10px]; 
     }
     .success__bar__circle{
-    @apply h-[3px] w-[90px] bg-primary my-0 mx-auto relative rounded-[30px]
+    @apply ml-[1.2rem] h-[3px] w-[90px] bg-primary my-[1rem] mx-auto relative rounded-[30px]
     }
     .success__bar__circle::before{
     @apply content-[""] absolute left-0 top-[50%] transform translate-y-[-50%] border-primary border-[6px] rounded-[50%] bg-[#1c1b1b] animate-sliding1
@@ -193,5 +208,66 @@
     .success__bar__circle::after{
     @apply content-[""] absolute right-0 top-[50%] transform translate-y-[-50%] border-primary border-[6px] rounded-[50%] bg-[#1c1b1b] animate-sliding2
     }
+.slider-2 a img{
+    @apply  flex mx-auto  text-[1rem] 
+
+}   
+    /*-----------------------FOOTER-UP----------------------*/
+.footer__up { 
+    @apply bg-bluee 
+}
+.up__wrapper{
+    @apply lg:max-w-[70rem] lg:w-full lg:mx-auto
+}
+.description__area img{
+    @apply mx-auto pt-[12rem] pb-[2rem]
+    lg:pt-[1.8rem]
+}
+.description__area p{
+    @apply pb-[1rem] text-[1.2rem] 
+}
+.up__row{
+    @apply text-center text-white
+    lg:grid lg:grid-cols-4
+}
+.social-icons i{
+    @apply border-[1px] border-white p-[.5rem] rounded hover:bg-primary transition-all
+}
+.nav_menu1 h2{
+    @apply text-[1.5rem] font-bold pt-[2rem] pb-[1.5rem]
+}
+.menu__container ul li a{
+    @apply text-[1.2rem]
+}
+.menu__container ul li {
+    @apply pb-[1rem] hover:text-primary transition-all
+}
+.custom__html h2{
+    @apply text-[1.5rem] pt-[1.5rem] pb-[1rem]
+    lg:pt-[2rem]
+}
+.witr_sub_table{
+    @apply flex justify-between text-[1.2rem] pb-[8px] border-b-[1px] mb-[8px]
+}
+
+/* ---------------FOOTER------------ */
+.footer-bottom{
+ @apply relative bg-bluee text-white pt-[3rem]
+}
+.copy-right-text{
+@apply flex justify-center pb-[1rem] pt-[1rem] text-[1rem]
+}
+.text-right{
+@apply flex justify-center gap-[1rem] 
+
+}
+.text-right li{
+ @apply hover:text-primary transition-all text-[1rem]
+}
+.row{
+@apply border-t-[1px]
+lg:flex lg:justify-between lg:items-center lg:max-w-[70rem] lg:w-full lg:mx-auto
+}
+
 }
 
