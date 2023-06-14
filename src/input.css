@@ -5,136 +5,159 @@
 .container{
     @apply mx-auto p-[1.5rem] w-full max-w-[140rem];
 }
-
-
-
+.btn--solid{
+    @apply inline-block text-light text-[1.2rem] bg-primary px-[1.5rem] py-[.5rem] rounded-md font-semibold transition-all border-[1px] border-transparent hover:bg-dark hover:transition-all
+}
+.btn--outline{
+    @apply inline-block text-primary text-[1.2rem] bg-transparent px-[1.5rem] py-[.5rem] rounded-md font-semibold transition-all border-[1px] border-primary hover:bg-primary hover:transition-all hover:text-light
+}
+.text__stroke{
+    -webkit-text-stroke:4px #ffffff;
+    -text-stroke:4px #ffffff;
+}
+body{
+    font-family:Raleway, sans-serif;
+    font-size: 20px
+}
 @layer components {
-    .header__mobile{
-        @apply lg:hidden
+  /*HEADER*/
+  .header{
+    @apply lg:mt-[5rem] lg:fixed lg:w-full lg:bg-transparent;
+}
+.header .header__wrapper{
+    @apply lg:flex lg:items-center lg:justify-between lg:bg-bluee lg:max-w-[75rem] lg:mx-auto lg:rounded-md
+}
+.header .branding{
+    @apply lg:flex  bg-light p-[1.5rem] lg:bg-transparent;
+}
+.header .branding img{
+    @apply mx-auto
+}
+.header__nav__title{
+    @apply bg-primary p-[1rem] flex justify-between items-center lg:bg-transparent lg:hidden
+}
+.header__nav__title h2{
+    @apply text-light font-bold text-[1.3rem]
+}
+.header__nav__title .toggle__menu span{
+    @apply w-[1.5rem] h-[.2rem] bg-light block transition-all
+}
+.header__nav__title .toggle__menu.open span:first-child{
+    @apply transform translate-y-[6px] rotate-[225deg] transition-all
+}
+.header__nav__title .toggle__menu.open span:nth-child(2){
+    @apply opacity-0 transition-all
+}
+.header__nav__title .toggle__menu.open span:last-child{
+    @apply transform translate-y-[-6px] rotate-[-225deg] transition-all
+}
+.header__nav__title .toggle__menu span:nth-child(2){
+    @apply my-[.2rem]
+}
+.header__nav nav{
+    @apply max-h-0 overflow-hidden transition-all lg:max-h-[200rem] lg:flex lg:items-center lg:p-[1.5rem];
+}
+.header__nav nav.open{
+    @apply max-h-[200rem] transition-all
+}
+.header__nav nav li{
+    @apply list-none
+}
+.header__nav .drop__nav h4{
+    @apply flex items-center justify-between border-b-[1px] border-gray-400 px-[1.5rem] py-[.8rem] lg:border-none
+    lg:gap-[.5rem]
+}
+.header__nav .drop__nav h4 p{
+    @apply font-bold text-[1rem] lg:text-light lg:font-normal
+}
+.header__nav .drop__nav .drop__toggle span{
+    @apply w-[.8rem] h-[.2rem] bg-dark block transition-all lg:bg-light lg:h-[.1rem] lg:w-[.5rem];
+}
+.header__nav .drop__nav .drop__toggle span:first-child{
+    @apply lg:transform lg:rotate-[-45deg] lg:translate-x-[5px] lg:translate-y-[.15rem];
+}
+.header__nav .drop__nav .drop__toggle span:last-child{
+    @apply transform rotate-[270deg] translate-y-[-.15rem] lg:rotate-[45deg] lg:translate-y-0;
+}
+
+.header__nav .drop__nav .drop__toggle.open span:last-child{
+    @apply transform rotate-[0deg] transition-all
+}
+.header__nav .drop__content{
+    @apply max-h-0 overflow-hidden transition-all lg:max-h-[20rem] lg:absolute lg:bottom-[-25rem] lg:bg-primary lg:min-w-[10rem] lg:opacity-0 lg:py-[1rem];
+}
+.header__nav .drop__content.open{
+    @apply max-h-[200rem] transition-all;
+}
+.header__nav .drop__content ul li:not(first-child){
+    @apply border-b-[1px] border-gray-400 lg:border-none;
+}
+.header__nav .drop__content ul li{
+    @apply py-[1rem] lg:p-[1rem]
+}
+.header__nav .drop__content ul li a{
+    @apply px-[3rem] text-[.8rem] lg:px-0 lg:text-light lg:text-[1.2rem]
+}
+.header__nav .drop__content ul li:hover{
+    @apply lg:bg-light
+}
+.header__nav .drop__content ul li:hover a{
+    @apply lg:text-primary
+}
+.header__nav nav a.free{
+    @apply hidden lg:block 
+}
+
+    /** ---------- BANNER ---------- */
+
+    .banner{
+        @apply flex items-center bg-bannerBG1 min-h-[80vh] bg-cover bg-no-repeat lg:min-h-[110vh]
     }
-    .header__actions{
-        @apply lg:block
+
+    .banner__wrapper{
+        @apply flex gap-x-[1rem]
     }
-    .header__image img{
-        @apply flex mx-auto my-[2rem] lg:hidden 
+
+    .banner__content{
+        @apply flex items-center justify-between
     }
-    .header__all{
-        @apply flex justify-between bg-greeen
+
+    .banner__content img{
+        @apply hidden lg:flex
     }
-    .header__all h3{
-        @apply text-light flex items-center text-[1.5rem] ml-[1rem]
+
+    .banner__text{
+        @apply relative flex flex-col text-center items-center text-light lg:items-start lg:text-left
     }
-    .toggle__menu {
-        @apply  px-[.8rem] py-[1rem] mr-[1rem] lg:hidden;
-      }
-      .toggle__menu span {
-        @apply w-[1.5rem] h-[.18rem] transition-[.5s] bg-light block;
-      }
-      .toggle__menu span:nth-child(2) {
-        @apply my-[.3rem];
-      }
-      .toggle__menu.open span:first-child {
-        @apply translate-x-0 translate-y-[9px] rotate-[225deg] transition-[.5s] ease-in-out;
-      }
-      .toggle__menu.open span:nth-child(2) {
-        @apply opacity-0 transition-[.5s] ease-in-out;
-      }
-      .toggle__menu.open span:last-child {
-        @apply translate-x-0 translate-y-[-5px] rotate-[-225deg] ease-in-out;
-      }
-      
-.header__actions{
-    @apply hidden
-}
-      .header__actions.open{
-        @apply block top-0  transition-all;
+
+    .banner__text h2{
+        @apply flex text-center justify-center text-[1.8rem] font-[600] w-[20rem] lg:text-[4rem] lg:w-[45rem]
     }
-.header__item{
-    @apply text-dark mb-[1.5rem] lg:ml-[2rem]
-}
 
-.header__item h4{
-    @apply border-b py-[1rem] px-[2rem] flex justify-between text-dark text-[1rem] cursor-pointer lg:mb-[1rem]
-}
+    .banner__text p{
+        @apply text-[1.3rem] font-[600] mt-[1rem] mb-[3rem] px-[2rem] lg:px-0 lg:text-[1.5rem] w-[40rem]
+    }
 
-.header__item i{
-    @apply mr-[3rem] text-dark transition ease-linear duration-300 lg:hidden;
-}
-/* .plus{
-    @apply flex ml-[25rem] 
-} */
-.plus span:first-child{
-    @apply w-[1rem] h-[.18rem] transition-[.5s] bg-dark block justify-end translate-y-[3px];
-}
-.plus span:last-child{
-    @apply w-[1rem] h-[.18rem] transition-[.5s] bg-dark block justify-end rotate-[270deg];
-}
-/* .header__item i.open{
-    @apply transition ease-linear duration-300 rotate-[180deg];
-} */
+    .banner__text h1{
+        @apply absolute left-0 translate-y-[-2rem] bg-clip-text text-transparent text-[5rem] opacity-20 lg:text-[10rem] lg:translate-y-[-5rem]
+    }
 
-.header__item ul{
-    @apply max-h-0 overflow-hidden transition ease-linear duration-300 lg:max-h-[100%]
-}
+    .banner__btn{
+        @apply flex justify-center
+    }
 
-.header__item ul.open{
-    @apply max-h-[50rem] py-[1rem] transition ease-linear duration-300 bg-light shadow-[0_8px_15px_rgba(0,0,0,.2)]
-}
+    .banner__btn ul{
+        @apply flex gap-x-[.5rem] items-center
+    }
 
-.header__item ul li{
-    @apply border-b px-[3rem] mb-[1rem]
-}
 
-/* ----------HEADER PC------------------- */
-.header__pc{
-    @apply hidden lg:block lg:bg-greeen
-}
-
-.pc__wrapper{
-    @apply lg:max-w-[70rem] w-full mx-auto flex justify-between text-[.8rem] py-[1rem]
-}
-.pc__text{
-    @apply flex
-}
-.pc__in {
-    @apply flex gap-2 text-light
-}
-.pc__in h4{
-    @apply flex gap-2 items-baseline
-}
-.pc__socials{
-    @apply text-light
-}
-.pc__socials{
-    @apply flex gap-2
-}
-.pc__socials i{
-    @apply hover:text-dark
-}
-.pc__text a{
-    @apply flex text-light ml-[2rem] items-baseline
-}
-.pc__text span{
-    @apply flex ml-2
-}
-.pc__text p{
-    @apply flex text-light
-}
-
-/* -------------BANNER-------------- */
-.banner{
-    @apply bg-center bg-bannerBG1 min-h-[100vh] bg-cover bg-no-repeat lg:min-h-[45rem] flex items-center
-}
-.banner__wrapper img{
-    @apply lg:flex
-}
 
 /* ---------------SLIDER-1--------------- */
 .slider-1{
     @apply lg:max-w-[70rem] lg:w-full lg:mx-auto lg:z-[999];
 }
 .slider-1__wrapper{
-    @apply  lg:w-full lg:mx-auto  
+    @apply my-[2rem]  lg:w-full lg:mx-auto  
 }
 .slider-1__item{
     @apply w-[5rem] mx-auto bg-transparent lg:translate-y-[-10rem] lg:relative;
@@ -155,7 +178,7 @@
     @apply flex items-center justify-center;
 }
 .slider-1 .tns-outer{
-    @apply lg:max-w-[60%] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit;
+    @apply lg:max-w-[60%] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit   lg:z-[999];
 }
 .slider-1 .tns-controls{
     @apply text-[2rem]  lg:text-primary lg:flex lg:justify-between lg:z-[999] lg:w-[60%] lg:absolute;
@@ -169,32 +192,33 @@
     @apply z-[999] min-h-[25rem]
 } */
 /* ---------EDUTIT--------- */
+
 .edutit__wrapper{
-    @apply my-[2rem]
+    @apply my-[2rem] lg:grid lg:grid-cols-2 lg:gap-[2rem] lg:max-w-[90rem]  lg:w-full  lg:mx-auto
 }
 .edutit__wrapper img{
-    @apply flex w-[28rem] mx-auto
+    @apply flex w-[28rem] lg:w-[35rem] 
 }
 .edutit__text{
     @apply my-[2rem]
 }
 .edutit__text h2{
-    @apply  font-bold flex text-dark text-[2.2rem] text-justify ml-[1rem]
+    @apply  font-bold flex text-dark text-[1.5rem] text-justify ml-[1rem] lg:text-[2.9rem] lg:max-w-[35rem] 
 }
 .edutit__text h2 span{
-    @apply text-greeen text-[2.1rem]
+    @apply text-greeen text-[1.4rem] lg:text-[1.4rem]
 }
 .edutit__list{
     @apply  ml-[1rem] border-l-[5px] border-greeen
 }
 .edutit__list p{ 
-    @apply my-[2rem] text-gray-500 text-[2rem] ml-[1rem]
+    @apply my-[2rem] text-gray-500 text-[1.5rem] ml-[1rem]
 }
-.edutit__item{
-    @apply text-[1.6rem] mx-[1rem]
+.edutit__item p{
+    @apply text-gray-500 text-[1.2rem] mx-[1rem]
 }
 .edupit__success{
-    @apply text-[2rem] mt-[2rem]
+    @apply text-[1rem] mt-[2rem]
 }
 .success__bar{
     @apply  my-[10px]; 
@@ -208,10 +232,195 @@
     .success__bar__circle::after{
     @apply content-[""] absolute right-0 top-[50%] transform translate-y-[-50%] border-primary border-[6px] rounded-[50%] bg-[#1c1b1b] animate-sliding2
     }
-.slider-2 a img{
-    @apply  flex mx-auto  text-[1rem] 
 
-}   
+    .slider-2-all img{
+        @apply flex h-[4rem] my-[1rem] w-[4rem]
+    }
+    .slider-2{
+        @apply ml-[1rem]
+    }
+    
+
+    /** ---------- COURSE BANNER ---------- */
+
+    .course{
+        @apply  min-h-[50rem] bg-shape bg-cover bg-center py-[7rem] lg:min-h-[80rem]
+    }
+
+    .course .container{
+        @apply lg:max-w-[80rem]
+    }
+
+    .course__title{
+        @apply flex flex-col items-center text-center font-[700] text-[1.6rem] text-primary pb-[3rem] lg:text-[1rem]
+    }
+
+    .course__title h4{
+        @apply text-dark px-[3rem] text-[3rem] lg:w-[50rem]
+    }
+
+    .course__wrapper{
+        @apply lg:grid lg:grid-cols-3 lg:gap-[2rem]
+    }
+
+    .course__card{
+        @apply bg-light shadow-[0_4px_23px_rgba(0,0,0,.1)] rounded-b-[.5rem] mb-[1.5rem] transition ease-in-out duration-300 
+    }
+
+    .course__card:hover{
+        @apply translate-y-[-.5rem] transition ease-in-out duration-300
+    }
+
+    .course__img{
+        @apply relative
+    }
+
+    .course__img-content{
+        @apply absolute top-0 p-[1rem] w-[28.2rem] lg:w-[25rem]
+    }
+
+    .course__img-content ul{
+        @apply flex justify-between items-center
+    }
+
+    .course__img-content ul li:first-child{
+        @apply bg-primary px-[.7rem] py-[.3rem] rounded-[.3rem]
+    }
+
+    .course__img-content ul li:first-child {
+        @apply text-light text-[1.1rem]
+    }
+
+    .course__img-content ul li:last-child{
+        @apply bg-light px-[.6rem] py-[.2rem] rounded-[.2rem]
+    }
+
+    .course__img-content ul li:last-child a{
+        @apply text-primary text-[1.5rem]
+    }
+
+    .course__content{
+        @apply py-[1rem]
+    }
+
+    .course__text{
+        @apply p-[1rem]
+    }
+
+    .course__text ul li{
+        @apply flex items-center text-[1.1rem] text-grey
+    }
+
+    .course__text ul li span{
+        @apply italic ml-[.2rem]
+    }
+
+    .course__text ul li i{
+        @apply text-[.8rem] mr-[.3rem] text-primary
+    }
+
+    .course__text ul li a{
+        @apply mx-[.2rem] text-dblue font-[600]
+    }
+
+    .course__text ul li:nth-child(2){
+        @apply my-[1rem] pr-[2rem]
+    }
+
+    .course__text ul li:nth-child(2) a{
+        @apply text-dark font-[600] hover:text-primary transition ease-in-out duration-300
+    }
+
+    .course__text ul li img{
+        @apply w-[2rem] rounded-full mr-[.5rem]
+    }
+
+    .course__subtext{
+        @apply border-t-[1px] p-[1rem] flex items-center justify-between
+    }
+
+    .course__subtext p{
+        @apply text-dark text-[1.1rem] font-[600]
+    }
+
+    .course__subtext a{
+        @apply text-[1.1rem]
+    }
+
+
+
+    /** ---------- INSTRUCTOR BANNER ---------- */
+
+    .instructor{
+        @apply relative py-[1rem]
+    }
+
+    .instructor__title{
+        @apply font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
+    }
+
+    .instructor__title h4{
+        @apply text-dark w-[17rem] lg:text-[3rem] lg:w-[30rem]
+    }
+
+    .instructor__wrapper{
+        @apply flex gap-x-[2rem]
+    }
+
+    .instructor__card{
+        @apply text-center bg-light border-[2px] border-lgreen rounded-[.5rem] py-[3rem] shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] overflow-hidden mb-[.5rem] px-[.5rem]
+    }
+
+    .instructor__card:hover{
+        @apply  border-light transition ease-in-out duration-300
+    }
+
+    .instructor__card:hover .instructor__social:before{
+        @apply w-[100%] bg-primary transition-all duration-300
+    }
+
+    .instructor__content{
+        @apply mb-[1rem] flex flex-col items-center
+    }
+
+    .instructor__content h3{
+        @apply text-[1.5rem] font-[600] text-dark pt-[.5rem]
+    }
+
+    .instructor__content p{
+        @apply text-[1.1rem] text-grey
+    }
+
+    .instructor__social{
+        @apply relative flex justify-center
+    }
+
+    .instructor__social:before{
+        @apply absolute content-[''] bg-[#ddd] top-0 h-[1px] w-[25%] m-auto transition-all duration-300
+    }
+
+    .instructor__social ul{
+        @apply flex pt-[1.5rem]
+    }
+
+    .instructor__social ul li:nth-child(2){
+        @apply mx-[.5rem]
+    }
+
+    .instructor__social ul li:first-child a{
+        @apply px-[.8rem]
+    }
+
+    .instructor__social ul li a{
+        @apply bg-lgreen px-[.7rem] py-[.5rem] text-primary text-[1rem] rounded-[.2rem]
+    }
+
+    .instructor__social ul li a:hover{
+        @apply text-light bg-primary transition ease-in-out duration-300
+    }
+
+
+
     /*-----------------------FOOTER-UP----------------------*/
 .footer__up { 
     @apply bg-bluee 
@@ -241,13 +450,16 @@
 }
 .menu__container ul li {
     @apply pb-[1rem] hover:text-primary transition-all
+} 
+.custom__html{
+    @apply mx-[1rem]
 }
 .custom__html h2{
     @apply text-[1.5rem] pt-[1.5rem] pb-[1rem]
     lg:pt-[2rem]
 }
 .witr_sub_table{
-    @apply flex justify-between text-[1.2rem] pb-[8px] border-b-[1px] mb-[8px]
+    @apply flex justify-between text-[1.2rem] pb-[8px] border-b-[1px] 
 }
 
 /* ---------------FOOTER------------ */

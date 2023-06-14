@@ -9,6 +9,18 @@ module.exports = {
         primary:'#04ddb2',
         greeen:'#0EB582',
         bluee:'#18406B',
+        grey: '#777777',
+        'primary': '#0EB582',
+        'dark': '#2A374C',
+        'light': '#FFFFFF',
+        'dgrey': '#444',
+        'lblue': '#18406b',
+        'lgreen': '#C6F9E9',
+        'grey': '#777777',
+        'dblue': '#4b5981',
+      },
+      fontFamily: {
+        'Raleway' :['Raleway', 'sans-serif']
       }
     },
     screens: {
@@ -25,6 +37,7 @@ module.exports = {
       'first-bg':'url("./img/parallax-1-1920x850.jpg")',
       'dream-bg':'url("./img/thumnails-info-1-370x303.jpg")',
       'email-bg': 'url("./img/parallax-2-1920x850.jpg")',
+      'shape':'url("./img/shape.jpg")',
     },
     keyframes: {
       sliding1:{
@@ -48,7 +61,8 @@ module.exports = {
       sliding1: 'sliding1 3s linear infinite',
       sliding2: 'sliding2 3s linear infinite',
     },
-  plugins: [],
+  plugins: [ require('tailwindcss'),
+  require('autoprefixer'),],
 }
 
 }
