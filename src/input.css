@@ -19,6 +19,28 @@ body{
     font-family:Raleway, sans-serif;
     font-size: 20px
 }
+
+.slider-1.tns-nav{
+    @apply flex items-center justify-center;
+}
+.slider-1 .tns-outer{
+    @apply lg:max-w-[60%] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit   lg:z-[999];
+}
+.slider-1 .tns-controls{
+    @apply text-[2rem]  lg:text-primary lg:flex lg:justify-between lg:z-[999] lg:w-[60%] lg:absolute;
+}
+.instructor .tns-controls{
+    @apply text-[2rem]  lg:text-light lg:flex justify-end lg:gap-[2rem] lg:mb-[2rem]
+}
+.instructor .tns-controls i{
+    @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
+}
+.news .tns-controls{
+    @apply text-[2rem]  lg:text-light lg:flex lg:gap-[2rem] lg:mb-[2rem] lg:top-[22rem] lg:relative
+}
+.news .tns-controls i{
+    @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
+}
 @layer components {
   /*HEADER*/
   .header{
@@ -174,15 +196,7 @@ body{
 .slider-1__text p{
     @apply text-greeen my-[1rem]
 }
-.slider-1.tns-nav{
-    @apply flex items-center justify-center;
-}
-.slider-1 .tns-outer{
-    @apply lg:max-w-[60%] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit   lg:z-[999];
-}
-.slider-1 .tns-controls{
-    @apply text-[2rem]  lg:text-primary lg:flex lg:justify-between lg:z-[999] lg:w-[60%] lg:absolute;
-}
+
 
 /* .tns-outer{
     @apply min-h-[20rem] z-[999]
@@ -352,11 +366,11 @@ body{
     /** ---------- INSTRUCTOR BANNER ---------- */
 
     .instructor{
-        @apply relative py-[1rem]
+        @apply relative py-[1rem] lg:max-w-[80rem] lg:w-full lg:mx-auto 
     }
 
     .instructor__title{
-        @apply font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
+        @apply ml-[2rem] font-[700] text-[1.6rem] text-primary pb-[2rem] lg:text-[1rem]
     }
 
     .instructor__title h4{
@@ -368,7 +382,7 @@ body{
     }
 
     .instructor__card{
-        @apply text-center bg-light border-[2px] border-lgreen rounded-[.5rem] py-[3rem] shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] overflow-hidden mb-[.5rem] px-[.5rem]
+        @apply mr-[2rem] text-center bg-light border-[2px] border-lgreen rounded-[.5rem] py-[3rem] shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] overflow-hidden mb-[.5rem] 
     }
 
     .instructor__card:hover{
@@ -420,14 +434,14 @@ body{
     }
 
 
-
     /* BENEFITS SECTION */
+ 
     .benefits{
         @apply py-[2rem];
     }
 
     .benefits__wrapper{
-        @apply flex flex-col justify-center gap-[1.5rem] mt-[3rem];
+        @apply lg:max-w-[80rem] lg:w-full lg:mx-auto  lg:grid lg:grid-cols-4 flex flex-col justify-center gap-[1.5rem] mt-[3rem];
     }
 
     .benefits-title{
@@ -435,23 +449,23 @@ body{
     }
 
     .benefits-title h3{
-        @apply text-primary text-[1.5rem] font-bold;
+        @apply lg:text-primary lg:text-[1.2rem] lg:font-bold text-primary text-[1.5rem] font-bold;
     }
 
     .benefits-title p{
-        @apply font-bold text-dark text-[1.6rem]
+        @apply lg:text-[2.5rem] lg:max-w-[37rem] lg:mx-auto font-bold text-dark text-[1.6rem]
     }
 
     .benefits-item{
-        @apply flex justify-center items-center gap-[1.5rem] border-solid border-[2px] rounded-[5px] border-primary py-[3rem] border-opacity-30;
+        @apply lg:py-[4rem] lg:transition-[.5s] lg:ease-in flex justify-center items-center gap-[1.5rem] border-solid border-[2px] rounded-[5px] border-primary py-[3rem] border-opacity-30;
     }
 
     .benefits-img{
-        @apply flex justify-center;
+        @apply flex justify-center lg:mb-[1.5rem];
     }
 
     .benefits-content a{
-        @apply text-dark text-[1.4rem] text-center font-bold my-[1.5rem];
+        @apply text-dark text-[1.4rem] text-center font-bold my-[1.5rem] ;
     }
 
     .benefits-content a:hover{
@@ -459,10 +473,43 @@ body{
     }
 
     .benefits-content p{
-        @apply text-center text-gray-500 text-[1.2rem] font-medium;
+        @apply text-center text-gray-500 text-[1.2rem] font-bold lg:mt-[1.5rem] ;
     }
 
+        .benefits-item:hover{
+            @apply border-opacity-0 shadow-xl transition-[.5s] ease-in;
+        }
+
+/* ---------NEWS--------------- */
+.news__wrapper{
+    @apply lg:gap-[2rem] lg:grid lg:grid-cols-2 lg:max-w-[80rem] lg:w-full lg:mx-auto
+    
+}
+.news__text1 h2{
+    @apply mt-[2rem] font-bold text-greeen text-[1.5rem] text-center 
+}
+.news__text1 p{
+    @apply mb-[2rem] mx-auto text-center font-bold text-[1.5rem] w-[25rem] text-gray-500 lg:text-start lg:w-full lg:max-w-[40rem] lg:text-[3rem]
+}
    
+.news__slider__text h5{
+    @apply text-greeen 
+}
+.news__slider__text p{
+    @apply text-gray-500 mx-[2rem] my-[1rem] w-[24rem]
+}
+.news__image{
+    @apply flex 
+}
+.news__image img{
+    @apply w-[4rem]
+} 
+.news__image span{
+    @apply text-greeen
+}       
+.text__news{
+    @apply ml-[1rem]
+}   
     /*-----------------------FOOTER-UP----------------------*/
 .footer__up { 
     @apply bg-bluee 
