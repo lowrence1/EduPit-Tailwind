@@ -555,6 +555,7 @@ video {
 @media (min-width: 1080px) {
   .header {
     position: fixed;
+    z-index: 999;
     margin-top: 5rem;
     width: 100%;
     background-color: transparent;
@@ -683,8 +684,21 @@ video {
   list-style-type: none;
 }
 
+@media (min-width: 1080px) {
+  .header__nav nav li:hover .drop__content {
+    top: 5.5rem;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .group:hover .header__nav nav li:hover .drop__content {
+    opacity: 1;
+  }
+}
+
 .header__nav .drop__nav h4 {
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: space-between;
   border-bottom-width: 1px;
@@ -792,6 +806,15 @@ video {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 1080px) {
+  .header .drop__content.drop {
+    top: 5.5rem;
+    height: -moz-fit-content;
+    height: fit-content;
+    opacity: 1;
+  }
 }
 
 .header__nav .drop__content ul li:not(first-child) {
@@ -979,11 +1002,8 @@ video {
 
 @media (min-width: 1080px) {
   .slider-1 {
-    z-index: 999;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 70rem;
+    position: relative;
+    z-index: 2;
   }
 }
 
@@ -994,9 +1014,7 @@ video {
 
 @media (min-width: 1080px) {
   .slider-1__wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    position: relative;
   }
 }
 
@@ -1005,14 +1023,6 @@ video {
   margin-right: auto;
   width: 5rem;
   background-color: transparent;
-}
-
-@media (min-width: 1080px) {
-  .slider-1__item {
-    position: relative;
-    --tw-translate-y: -10rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
 }
 
 .slider-1__item__img {
@@ -2214,19 +2224,6 @@ body{
     width: 4rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-
-  .lg\:top-\[5\.5rem\] {
-    top: 5.5rem;
-  }
-
-  .lg\:h-fit {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-
-  .group:hover .lg\:group-hover\:opacity-\[1\] {
-    opacity: 1;
   }
 }
 

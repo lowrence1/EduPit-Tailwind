@@ -44,7 +44,7 @@ body{
 @layer components {
   /*HEADER*/
   .header{
-    @apply lg:mt-[5rem] lg:fixed lg:w-full lg:bg-transparent;
+    @apply lg:mt-[5rem] lg:fixed lg:w-full lg:bg-transparent lg:z-[999];
 }
 .header .header__wrapper{
     @apply lg:flex lg:items-center lg:justify-between lg:bg-bluee lg:max-w-[75rem] lg:mx-auto lg:rounded-md
@@ -85,9 +85,12 @@ body{
 .header__nav nav li{
     @apply list-none
 }
+.header__nav nav li:hover .drop__content{
+    @apply lg:group-hover:opacity-[1] lg:top-[5.5rem] lg:h-fit;
+}
 .header__nav .drop__nav h4{
     @apply flex items-center justify-between border-b-[1px] border-gray-400 px-[1.5rem] py-[.8rem] lg:border-none
-    lg:gap-[.5rem]
+    lg:gap-[.5rem] cursor-pointer
 }
 .header__nav .drop__nav h4 p{
     @apply font-bold text-[1rem] lg:text-light lg:font-normal
@@ -110,6 +113,9 @@ body{
 }
 .header__nav .drop__content.open{
     @apply max-h-[200rem] transition-all;
+}
+.header .drop__content.drop{
+    @apply lg:opacity-[1] lg:top-[5.5rem] lg:h-fit
 }
 .header__nav .drop__content ul li:not(first-child){
     @apply border-b-[1px] border-gray-400 lg:border-none;
@@ -176,13 +182,14 @@ body{
 
 /* ---------------SLIDER-1--------------- */
 .slider-1{
-    @apply lg:max-w-[70rem] lg:w-full lg:mx-auto lg:z-[999];
+    @apply  lg:relative lg:z-[2];
 }
 .slider-1__wrapper{
-    @apply my-[2rem]  lg:w-full lg:mx-auto  
+    @apply  my-[2rem] lg:relative 
 }
 .slider-1__item{
-    @apply w-[5rem] mx-auto bg-transparent lg:translate-y-[-10rem] lg:relative;
+    @apply w-[5rem] mx-auto bg-transparent
+    
 }
 .slider-1__item__img{
     @apply  lg:hover:shadow-none lg:mx-auto bg-light mx-[2rem] justify-center items-center text-center border-[2px] border-greeen border-opacity-30 rounded-[1rem]  hover:shadow-[0px_0px_5px_0px_rgba(0,0,0,.9)]
