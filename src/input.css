@@ -462,28 +462,7 @@ body{
         @apply text-center text-gray-500 text-[1.2rem] font-medium;
     }
 
-    @media (min-width:1080px){
-        .benefits__wrapper{
-            @apply grid grid-cols-4;
-        }
-
-        .benefits-item{
-            @apply py-[4rem] transition-[.5s] ease-in;
-        }
-
-        .benefits-item:hover{
-            @apply border-opacity-0 shadow-xl transition-[.5s] ease-in;
-        }
-
-        .benefits-title h3{
-            @apply text-primary text-[1.2rem] font-bold;
-        }
-    
-        .benefits-title p{
-            @apply font-bold text-dark text-[2.7rem] w-[50rem] mx-auto;
-        }
-    }
-
+   
     /*-----------------------FOOTER-UP----------------------*/
 .footer__up { 
     @apply bg-bluee 
