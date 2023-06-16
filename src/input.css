@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer utilities{
+    .btn{
+        @apply p-3 rounded-md;
+    }
+    .btn.green{
+        @apply bg-[hsl(161.68,85.64%,38.24%)] text-white font-semibold hover:bg-[#444] transition-all duration-500;
+    }
+    .btn.green-outline{
+        @apply border-[.1rem] font-semibold border-[hsl(161.68,85.64%,38.24%)] text-[hsl(161.68,85.64%,38.24%)] hover:bg-[hsl(161.68,85.64%,38.24%)] hover:text-white transition-all duration-500;
+    }
+}
+
+.banner .tns-slider{
+    @apply my-[10rem];
+}
+.banner .tns-controls{
+    @apply hidden lg:flex items-center justify-between absolute w-full right-0 top-[50%] px-[2rem] opacity-0 transition-all;
+}
+.banner:hover .tns-controls{
+    @apply opacity-100 transition-all;
+}
+.banner .tns-controls button{
+    @apply text-white bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
+}
+.slider-1 .tns-outer{
+    @apply translate-y-[-5rem] z-[999]
+}
+
 .container{
     @apply mx-auto p-[1.5rem] w-full max-w-[140rem];
 }
@@ -21,13 +51,19 @@ body{
 }
 
 .slider-1.tns-nav{
-    @apply flex items-center justify-center;
+    @apply  flex items-center justify-center;
 }
 .slider-1 .tns-outer{
-    @apply lg:max-w-[60%] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit   lg:z-[999];
+    @apply  lg:max-w-[80rem] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit   lg:z-[999];
 }
 .slider-1 .tns-controls{
-    @apply text-[2rem]  lg:text-primary lg:flex lg:justify-between lg:z-[999] lg:w-[60%] lg:absolute;
+    @apply text-[2rem]  lg:text-light lg:flex lg:justify-between lg:z-[999] lg:w-[100%] lg:absolute;
+}
+.slider-1 .tns-outer i{
+    @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
+}
+.slider-1:hover .tns-controls{
+    @apply opacity-100 transition-all;
 }
 .instructor .tns-controls{
     @apply text-[2rem]  lg:text-light lg:flex justify-end lg:gap-[2rem] lg:mb-[2rem]
@@ -35,11 +71,17 @@ body{
 .instructor .tns-controls i{
     @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
 }
+.testimonial .tns-controls{
+    @apply text-[2rem]  lg:text-light lg:flex lg:gap-[2rem] lg:mb-[2rem] lg:relative
+}
+.testimonial .tns-controls i{
+    @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
+}
 .news .tns-controls{
-    @apply text-[2rem]  lg:text-light lg:flex lg:gap-[2rem] lg:mb-[2rem] lg:top-[22rem] lg:relative
+    @apply lg:ml-[-5rem] lg:justify-end lg:max-w-[80rem] lg:mx-auto lg:w-full lg:mt-[-37rem]  lg:z-50 lg:absolute text-[2rem]  lg:text-light lg:flex lg:gap-[2rem] lg:mb-[2rem] 
 }
 .news .tns-controls i{
-    @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black
+    @apply bg-primary rounded-full lg:h-[4rem] lg:w-[4rem] lg:py-[1rem] hover:bg-black 
 }
 @layer components {
   /*HEADER*/
@@ -135,50 +177,70 @@ body{
 .header__nav nav a.free{
     @apply hidden lg:block 
 }
+/* ------------HEADER-PC---------- */
+.header__pc{
+    @apply hidden lg:flex bg-primary py-[1rem]
+}
+.pc__wrapper{
+    @apply text-light justify-between flex w-full max-w-[80rem] mx-auto 
+}
+.pc__text{
+   @apply flex justify-between
+}
+.pc__text span{
+    @apply text-light
+}
+.pc__socials  i {
+    @apply  ml-[1rem] hover:text-black
+}
+.pc__in{
+    @apply flex
+}
+.pc__in  i {
+    @apply  mr-[1rem] 
+}
+.pc__in a:last-child{
+    @apply border-l-[3px] 
+}
+.pc__in a{
+    @apply px-[1rem]
+}
+.pc__text i{
+    @apply mr-[1rem] ml-[2rem]
+}
 
-    /** ---------- BANNER ---------- */
 
+    /* ---------------------------BANNER------------------------ */
     .banner{
-        @apply flex items-center bg-bannerBG1 min-h-[80vh] bg-cover bg-no-repeat lg:min-h-[110vh]
+        @apply bg-bannerBG1 bg-cover h-[50rem] bg-no-repeat relative lg:h-[65rem];
     }
-
-    .banner__wrapper{
-        @apply flex gap-x-[1rem]
+    .banner .container{
+        @apply max-w-[100rem];
     }
-
     .banner__content{
-        @apply flex items-center justify-between
+        @apply flex items-center justify-between;
     }
-
-    .banner__content img{
-        @apply hidden lg:flex
+    .banner__item{
+        @apply flex items-center;
     }
-
+    .banner__item img{
+        @apply hidden lg:block w-full lg:w-[40rem];
+    }
     .banner__text{
-        @apply relative flex flex-col text-center items-center text-light lg:items-start lg:text-left
+        @apply text-center w-full relative lg:text-left lg:pt-[1rem];
     }
-
-    .banner__text h2{
-        @apply flex text-center justify-center text-[1.8rem] font-[600] w-[20rem] lg:text-[4rem] lg:w-[45rem]
-    }
-
-    .banner__text p{
-        @apply text-[1.3rem] font-[600] mt-[1rem] mb-[3rem] px-[2rem] lg:px-0 lg:text-[1.5rem] w-[40rem]
-    }
-
     .banner__text h1{
-        @apply absolute left-0 translate-y-[-2rem] bg-clip-text text-transparent text-[5rem] opacity-20 lg:text-[10rem] lg:translate-y-[-5rem]
+        @apply absolute left-0 top-0 z-[-1] text-transparent opacity-40 stroke-inherit font-bold text-[4rem] leading-none lg:text-[9rem];
     }
-
-    .banner__btn{
-        @apply flex justify-center
+    .banner__text h4{
+        @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold lg:leading-[6rem];
     }
-
-    .banner__btn ul{
-        @apply flex gap-x-[.5rem] items-center
+    .banner__text p{
+        @apply text-white text-[1.5rem] w-[25rem] lg:w-[40rem] mx-auto lg:m-0 mb-5;
     }
-
-
+    .banner__actions{
+        @apply text-[1.2rem] my-[2rem] w-full lg:w-fit;
+    }
 
 /* ---------------SLIDER-1--------------- */
 .slider-1{
@@ -486,43 +548,222 @@ body{
         .benefits-item:hover{
             @apply border-opacity-0 shadow-xl transition-[.5s] ease-in;
         }
-
-/* ---------NEWS--------------- */
+/* NEWS */
 .news__wrapper{
-    @apply lg:gap-[2rem] lg:grid lg:grid-cols-2 lg:max-w-[80rem] lg:w-full lg:mx-auto
-    
+    @apply lg:max-w-[80rem] lg:mx-auto lg:w-full
 }
-.news__text1 h2{
-    @apply mt-[2rem] font-bold text-greeen text-[1.5rem] text-center 
-}
-.news__text1 p{
-    @apply mb-[2rem] mx-auto text-center font-bold text-[1.5rem] w-[25rem] text-gray-500 lg:text-start lg:w-full lg:max-w-[40rem] lg:text-[3rem]
-}
-   
-.news__slider__text h5{
-    @apply text-greeen 
-}
-.news__slider__text p{
-    @apply text-gray-500 mx-[2rem] my-[1rem] w-[24rem]
-}
-.news__image{
-    @apply flex 
-}
-.news__image img{
-    @apply w-[4rem]
-} 
-.news__image span{
-    @apply text-greeen
-}       
-.text__news{
-    @apply ml-[1rem]
-}   
-    /*-----------------------FOOTER-UP----------------------*/
+    .news__title h6{
+        @apply ml-[2rem] text-[1.5rem] font-bold text-primary lg:text-start lg:ml-0
+    }
+    .news__title h3{
+        @apply ml-[2rem] text-[1.62rem] font-bold text-dark mb-[2rem] lg:text-start lg:text-[3rem] lg:max-w-[50rem] lg:ml-0
+    }
+    .news__list{
+        @apply lg:flex lg:gap-x-[2rem] ;
+    }
+
+    .news__item{
+        @apply overflow-hidden bg-light shadow-[0px_5px_4px_0px_rgba(0,0,0,.05)] mb-[1rem] px-[.5rem] min-h-[10rem] pb-[2rem] lg:px-0
+    }
+
+    .news__item:hover .news__tag{
+        @apply transition ease-in duration-300;
+    }
+
+    .news__item:hover .news__tag span{
+        @apply top-0 left-0 w-full h-full transition-all duration-500;
+    }
+
+    .news__item:hover .news__tag p{
+        @apply left-[2%] p-[.5rem] text-[1.1rem] transition-all duration-500;
+    }
+
+    .news__item:hover .figure img{
+        @apply scale-[1.1] transition ease-in-out duration-500;
+    }
+    .news__item figure{
+        @apply overflow-hidden relative;
+    }
+    .news__item figure img{
+        @apply   w-[100%] h-[22rem] lg:h-[15rem] transition-all duration-500;
+    }
+    .news__tag{
+        @apply transition ease-in duration-300
+    }
+
+    .news__tag span{
+        @apply absolute top-[50%] left-[50%] bg-black bg-opacity-50 w-0 h-0 transition-all duration-500
+    }
+
+    .news__tag p{
+        @apply absolute top-[2%] left-[10%] bg-primary text-light rounded-[.2rem] font-[600] m-[1rem] text-[0] transition-all duration-500
+    }
+    .news__item:hover img{
+        @apply bg-dark scale-[1.08] transition-all duration-500;
+    }
+    .news__text h5{
+        @apply text-[1.3rem] px-[1rem] font-bold text-dark mt-[2rem];
+    }
+    .news__text ul{
+        @apply flex gap-[1rem] px-[1rem];
+    }
+    .news__text ul li{
+        @apply mt-[1rem] text-primary lg:mt-[.5rem];
+    }
+    .news__text ul li i{
+        @apply mr-[.5rem];
+    }
+    .news__btn{
+        @apply flex gap-[1rem] px-[1rem]  mt-[3rem] lg:items-start lg:justify-start lg:mt-[2rem];
+    }
+    .news__btn a{
+        @apply w-[10rem] px-[1.5rem] text-center py-[.8rem] font-semibold text-dark border-dark border-[1px] bg-light rounded-md  
+    }
+    .news__btn a:hover{
+        @apply bg-primary text-light border-primary transition-all ease-in-out duration-300;
+    }
+    .news .tns-outer{
+        @apply lg:max-w-[70rem] lg:w-full lg:mx-auto lg:flex lg:items-center lg:h-fit;
+    }
+
+
+        
+        /* ---------------------------TESTIMONIAL----------------------------*/
+    .testimonial{
+        @apply bg-[#0EB58208] relative mb-[10rem] ;
+    }
+    .testimonials__wrapper{
+        @apply mx-[2rem] py-[2rem] lg:max-w-[80rem] lg:w-full lg:mx-auto;
+    }
+    .testimonials__content{
+        @apply  my-[2rem] lg:flex lg:items-center lg:justify-center lg:gap-[3rem];
+    }
+    .testimonials__text{
+        @apply lg:w-[30rem];
+    }
+    .testimonials__text h4{
+        @apply text-primary font-bold text-[1.5rem] text-center lg:text-[2rem];
+    }
+    .testimonials__text p{
+        @apply text-dark font-bold text-[1.5rem] text-center lg:text-[3rem] lg:w-[38rem] lg:text-center lg:ml-[-4rem];
+    }
+    .testimonials__slider span{
+        @apply text-primary text-[2rem];
+    }
+    .testimonials__slider p{
+        @apply text-gray-500 text-[1.2rem] text-left;
+    }
+    .testimonials__slider img{
+        @apply w-[4rem];
+    }
+    .testimonials__slider__profile{
+        @apply flex items-center gap-2 my-[1rem];
+    }
+    .testimonials__slider__profile h6{
+        @apply text-dark font-bold;
+    }
+    .testimonials__slider__profile p{
+        @apply text-primary font-bold text-left;
+    }
+    .testimonials__text__page{
+        @apply text-center font-bold text-[1.5rem] mb-5;
+    }
+    .testimonials__text__page h1{
+        @apply text-primary;
+    }
+    .testimonials__text__page h2{
+        @apply text-dark;
+    }
+    .testimonials__card{
+        @apply border-[.1rem] border-primary p-[2rem] my-[1rem] shadow-md hover:shadow-xl hover:border-white lg:flex lg:items-center lg:gap-4 lg:p-[1rem] lg:w-[38rem] lg:h-[15rem] transition-all duration-500;
+    }
+    .testimonials__card__text{
+        @apply my-[1rem] relative;
+    }
+    .testimonials__card__text p{
+        @apply text-primary font-semibold;
+    } 
+    .testimonials__card__text h2{
+        @apply text-dark font-bold text-[2rem];
+    }
+    .testimonials__card__actions{
+        @apply h-[5rem] relative;
+    }
+    .testimonials__card__actions span{
+        @apply inline-block mt-[1rem] z-20 bg-primary w-[2rem] h-[2rem] rounded-full relative transition-all duration-500;
+    } 
+    .testimonials__card__actions span::before{
+        @apply content-[""] block absolute w-[.8rem] lg:w-[.9rem] h-1 bg-white left-[30%] top-[45%];
+    } 
+    .testimonials__card__actions span::after{
+        @apply content-[""] block absolute w-1 h-[.8rem] bg-white left-[45%] top-[30%];
+    } 
+    .testimonials__card__actions a{
+        @apply absolute inline-block w-[7rem] text-center lg:w-[9rem] h-[2rem] lg:h-[2.5rem] lg:text-[1.5rem] opacity-0 left-0 top-0 text-white font-bold p-1 rounded-md transition-all duration-500;
+    } 
+    .testimonials__card__actions a::after{
+        @apply content-[""] block absolute top-0 left-0 rounded-md bg-primary w-0 h-full z-[-1] transition-all duration-500;
+    }
+    .testimonials__card:hover .testimonials__card__actions a::after{
+        @apply w-full h-full transition-all duration-500;
+    }
+    .testimonials__card:hover .testimonials__card__actions a{
+        @apply opacity-100 transition-all duration-500;
+    }
+    .testimonials__card:hover .testimonials__card__actions span{
+        @apply w-0 h-0 transition-all duration-500;
+    }
+    .testimonials__card:hover .testimonials__card__actions span::before{
+        @apply opacity-0 transition-all duration-500;
+    }
+    .testimonials__card:hover .testimonials__card__actions span::after{
+        @apply opacity-0 transition-all duration-500;
+    }
+    .testimonials__content:nth-child(2){
+        @apply block my-[5rem];
+    }
+    .testimonials__cards{
+        @apply lg:flex lg:items-center lg:gap-[3rem] lg:justify-center;
+    }
+    .testimonials__content:last-child{
+        @apply max-w-[28rem] absolute -bottom-[25rem] left-5 w-full lg:-bottom-[16rem] lg:max-w-full lg:left-0 ;
+    }
+    .testimonials__newsletter{
+        @apply bg-primary px-[1rem] py-[2rem] rounded-md lg:p-[2.5rem] mx-auto lg:w-[80rem]  lg:flex lg:items-center lg:justify-between; 
+    }
+    .testimonials__newsletter__text h4{
+        @apply text-white font-bold text-[1.5rem] lg:text-[4rem]; 
+    }
+    .testimonials__newsletter__text p{
+        @apply text-white font-semibold text-[1.2rem]; 
+    }
+    .testimonials__newsletter__actions{
+        @apply mt-[2rem] lg:flex lg:h-[4rem]; 
+    }
+    .testimonials__newsletter__actions input{
+        @apply outline-none p-4 w-full rounded-md lg:rounded-r-none lg:w-[30rem]; 
+    }
+    .testimonials__newsletter__actions a{
+        @apply bg-dark w-full flex items-center justify-center h-fit p-4 mt-[1rem] lg:m-0 lg:h-full lg:w-[10rem] hover:bg-[#18406b] transition-all duration-500 ; 
+    }
+    .testimonials__newsletter__actions a i{
+        @apply text-white; 
+    }
+ .testimonials__slider__profile__text h6{
+        @apply ml-[1.5rem]
+    }
+     .testimonials__slider__profile__text p{
+        @apply ml-[1.5rem]
+    }
+    .testimonials__text__page h2{
+        @apply text-[2rem] lg:text-[3rem] lg:max-w-[40rem] lg:mx-auto
+    }
+  /*-----------------------FOOTER-UP----------------------*/
 .footer__up { 
     @apply bg-bluee 
 }
 .up__wrapper{
-    @apply lg:max-w-[70rem] lg:w-full lg:mx-auto
+    @apply pt-[5rem] lg:max-w-[80rem] lg:w-full lg:mx-auto
 }
 .description__area img{
     @apply mx-auto pt-[12rem] pb-[2rem]
@@ -579,3 +820,25 @@ lg:flex lg:justify-between lg:items-center lg:max-w-[70rem] lg:w-full lg:mx-auto
 
 }
 
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:#01B3A7  ;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  #myBtn:hover {
+    background-color:#11263A ;
+  }
+  html {
+    scroll-behavior: smooth
+  }
